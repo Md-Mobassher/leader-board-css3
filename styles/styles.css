@@ -5,16 +5,21 @@
 body{
     font-family: 'Poppins', sans-serif;
     background: #E5E5E5;
+    margin: 0;
+    padding: 0;
 }
 main{
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 .container{
     background: #ffffff;
     width: 870px;
     padding: 30px;
     border-radius: 5px;
+    margin-top: 20px;
 }
 hr{
     border: 1px solid #D1D1D1;
@@ -22,10 +27,11 @@ hr{
 
 
 /* top players style  */
+
 .top-players{
     margin-bottom: 20px;
 }
-.player-title{
+.section-title{
     font-size: 24px;
     margin-top: 1px;
     color: #562EFF;
@@ -49,7 +55,7 @@ hr{
 }
 
 /* ========================
-        top blog styles
+       top blog styles
 ========================== */
 .top-blogs{
     margin-top: 19px;
@@ -57,6 +63,8 @@ hr{
 .blogs{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 20px;
+    grid-column-gap: 46px;
 }
 .blog{
     display: flex;
@@ -78,4 +86,71 @@ hr{
 .blog-author a{
     text-decoration: none;
     color: #562EFF;
+}
+
+/*------------------------
+     latest course 
+--------------------------*/
+.courses{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 40px;
+}
+.course-thumbnail img{
+    width: 224px;
+    height: 104px;
+}
+.course-title{
+    font-size: 20.0336px;
+}
+.course-author{
+    color: #ED6B4F;
+}
+.rating{
+    display: flex;
+    justify-content: space-between;
+}
+.filled{
+    color: orange;
+}
+.empty{
+    color: gray;
+}
+
+/* ----------------------------
+        Media Queries 
+-------------------------------*/
+
+/* Mobiles  */
+@media only screen and (max-width:668px) {
+    .container{
+        width: 80%;
+    }
+    .players, .blogs, .courses{
+        grid-template-columns: repeat(1, 1fr);
+        justify-items:center;
+    }
+    .player, .blog, .course{
+        flex-direction: column;
+    }
+   .blog-image{
+       align-items: center;
+   }
+
+}
+
+
+@media only screen and (min-width:689px) and (max-width:992px) {
+    .container{
+        width: 70%;
+    }
+    .players, .blogs, .latest-courses{
+        grid-template-columns: repeat(2, 1fr);
+        justify-items:center;
+        flex-wrap: wrap;
+    }
+    .player, .blog{
+        flex-direction: column;
+    }
+    
 }
